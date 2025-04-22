@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .crt {
+    text-shadow: 0 0 1px #ffffff, 0 0 2px #5F5F5F;
+    animation: crt-flicker 1000ms infinite;
+    position: relative;
+  }
+
+  .crt::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(0, 255, 0, 0.1),
+      rgba(0, 255, 0, 0.1) 1px,
+      transparent 4px,
+      transparent 8px
+    );
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  @keyframes crt-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      opacity: 1;
+    }
+    20%, 24%, 55% {
+      opacity: 0.95;
+    }
+  }
+}
