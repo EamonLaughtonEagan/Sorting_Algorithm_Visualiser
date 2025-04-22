@@ -1,4 +1,4 @@
-import { animate, motion, useMotionValue, useTransform } from "motion/react";
+import { motion, useMotionValue, useTransform } from "motion/react";
 import { useEffect, useState } from "react";
 import { algorithms } from "../static/object";
 import { SortFunction } from "./SortingFunctions";
